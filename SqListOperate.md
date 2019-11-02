@@ -2,7 +2,7 @@
 ## 按值查找
 > [!NOTE]
 > int LocateElem(SqList L,ElemType e){  
-&emsp    for(int i=0;i<L.length;i++)  
+    for(int i=0;i<L.length;i++)  
         if(L.data[i]==e)  
             return i+1;  
     return 0;  
