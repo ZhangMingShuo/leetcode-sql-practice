@@ -72,3 +72,23 @@ ElemType DeleteMin(SqList &L){
     L.length=i+1;  
     return true;  
 }  
+## 将顺序表的第i到j逆置
+> [!NOTE]
+> void ReverseSqList(SqList &L,int m,int n){
+    for(int i=m;i<m+(n-m+1)/2;i++)  
+    {  
+        ElemType t;  
+        t=L.data[i];  
+        L.data[i]=L.data[n+m-i];  
+        L.data[n+m-i]=t;  
+    }  
+}  
+
+## 循环左移p
+> [!NOTE]
+>
+void LeftShift(SqList &L,int p){  
+    ReverseSqList(L,0,p-1);  
+    ReverseSqList(L,p,L.length-1);  
+    ReverseSqList(L,0,L.length-1);  
+}  
