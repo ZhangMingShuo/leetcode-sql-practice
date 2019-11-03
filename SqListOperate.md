@@ -65,7 +65,7 @@
 
 ## 有序表去重
 > [!NOTE]
-> bool Delete_Same(SqList &L){
+> bool Delete_Same(SqList &L){  
     if(L.length==0)return false;  
     int i=0,j;                      //i存储第一个不相同的元素，j作指针  
     for(j=1;j<L.length;j++)  
@@ -76,7 +76,7 @@
 }  
 ## 将顺序表的第i到j逆置
 > [!NOTE]
-> void ReverseSqList(SqList &L,int m,int n){
+> void ReverseSqList(SqList &L,int m,int n){  
     for(int i=m;i<m+(n-m+1)/2;i++)  
     {  
         ElemType t;  
