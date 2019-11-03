@@ -36,20 +36,20 @@
 
 ## 删除最小元素
 > [!NOTE]
-> ElemType DeleteMin(SqList &L){
-    ElemType min=L.data[0];
-    int minloc=0;
-    for(int i=0;i<L.length;i++)
-    {
-        if(L.data[i]<min){
-            minloc=i;
-            min=L.data[i];
-        }
-    }
-    L.data[minloc]=L.data[L.length-1];
-    L.length--;
-    return min;
-}
+> ElemType DeleteMin(SqList &L){  
+    ElemType min=L.data[0];  
+    int minloc=0;  
+    for(int i=0;i<L.length;i++)  
+    {  
+        if(L.data[i]<min){  
+            minloc=i;  
+            min=L.data[i];  
+        }  
+    }  
+    L.data[minloc]=L.data[L.length-1];  
+    L.length--;  
+    return min;  
+}  
 
 ## 逆置顺序表
 > [!NOTE]
