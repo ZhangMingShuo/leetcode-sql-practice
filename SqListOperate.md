@@ -33,21 +33,23 @@
     L.length--;  
     return true;  
 }
-     
-ElemType DeleteMin(SqList &L){
-    ElemType min=L.data[0];
-    int minloc=0;
-    for(int i=0;i<L.length;i++)
-    {
-        if(L.data[i]<min){
-            minloc=i;
-            min=L.data[i];
-        }
-    }
-    L.data[minloc]=L.data[L.length-1];
-    L.length--;
-    return min;
-}
+
+## 删除最小元素
+> [!NOTE]
+> ElemType DeleteMin(SqList &L){  
+    ElemType min=L.data[0];  
+    int minloc=0;  
+    for(int i=0;i<L.length;i++)  
+    {  
+        if(L.data[i]<min){  
+            minloc=i;  
+            min=L.data[i];  
+        }  
+    }  
+    L.data[minloc]=L.data[L.length-1];  
+    L.length--;  
+    return min;  
+}  
 
 ## 逆置顺序表
 > [!NOTE]
@@ -63,7 +65,7 @@ ElemType DeleteMin(SqList &L){
 
 ## 有序表去重
 > [!NOTE]
-> bool Delete_Same(SqList &L){
+> bool Delete_Same(SqList &L){  
     if(L.length==0)return false;  
     int i=0,j;                      //i存储第一个不相同的元素，j作指针  
     for(j=1;j<L.length;j++)  
@@ -74,7 +76,7 @@ ElemType DeleteMin(SqList &L){
 }  
 ## 将顺序表的第i到j逆置
 > [!NOTE]
-> void ReverseSqList(SqList &L,int m,int n){
+> void ReverseSqList(SqList &L,int m,int n){  
     for(int i=m;i<m+(n-m+1)/2;i++)  
     {  
         ElemType t;  
@@ -86,8 +88,7 @@ ElemType DeleteMin(SqList &L){
 
 ## 循环左移p
 > [!NOTE]
->
-void LeftShift(SqList &L,int p){  
+> void LeftShift(SqList &L,int p){  
     ReverseSqList(L,0,p-1);  
     ReverseSqList(L,p,L.length-1);  
     ReverseSqList(L,0,L.length-1);  
