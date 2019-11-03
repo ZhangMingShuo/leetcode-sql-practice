@@ -33,8 +33,10 @@
     L.length--;  
     return true;  
 }
-     
-ElemType DeleteMin(SqList &L){
+
+## 删除最小元素
+> [!NOTE]
+> ElemType DeleteMin(SqList &L){
     ElemType min=L.data[0];
     int minloc=0;
     for(int i=0;i<L.length;i++)
@@ -86,8 +88,7 @@ ElemType DeleteMin(SqList &L){
 
 ## 循环左移p
 > [!NOTE]
->
-void LeftShift(SqList &L,int p){  
+> void LeftShift(SqList &L,int p){  
     ReverseSqList(L,0,p-1);  
     ReverseSqList(L,p,L.length-1);  
     ReverseSqList(L,0,L.length-1);  
