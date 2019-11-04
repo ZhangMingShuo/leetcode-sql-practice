@@ -220,3 +220,18 @@ typedef struct LNode{
     free(q);  
     return true;  
 }  
+
+### 设计一个递归算法删除不带头结点的单链表的所有值为x的结点
+> [!NOTE]
+> void Del_X_3(LinkList &L,ElemType x){  
+    LNode *p;  
+    if(L==NULL) return;  
+    if(L->data==x){  
+        p=L;  
+	L=L->next;  
+	free(P);  
+	Del_X_3(L->next,x);  
+    }else{  
+        Del_X_3(L->next,x);   
+    }
+}  
