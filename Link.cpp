@@ -107,11 +107,74 @@ bool ListDelete(LinkList L,int i){
     free(q);
     return true;
 }
+bool ListDeleteSame(LinkList &L){
+    LNode *p=L->next;
+    LNode *q;//q point to ptr prior
+    LNode *ptr;//scan all nodes ptr after p
+    while(p!=NULL){
+        q=p;
+	ptr=p->next;
+	while(ptr!=NULL){
+	    if(ptr->data==p->data){
+		q->next=ptr->next;
+		free(ptr);
+		ptr=q->next;
+	    }else{
+		q=q->next;
+		ptr=ptr->next;
+	    }
+	}
+	p=p->next;
+    }
+}
+LinkList Merge(LinkList La,LinkList Lb){
+    LinkList Lc;
+    LNode *pa,*pb,*pc,*ptr;
+    Lc=La;
+    pc=La;
+    pa=La->next;
+    pb=Lb->next;
+    while(pa!=NULL&&pb!=NULL){
+	if(pa->data<pb->data){//insert pa after pc
+            pc->next=pa;
+   	    pc=pa;
+	    pa=pa->next;
+	}else if(pa->data>pb->data){
+	    pc->next=pb;
+	    pc=pb;
+	    pb=pb->next;
+	}else{
+	    pc->next=pa;
+	    pc=pa;
+	    pa=pa->next;
+	    ptr=pb;
+            pb=pb->next;
+	    free(ptr);
+	}
+    }
+    if(pa!=NULL)
+	pc->next=pa;
+    else 
+	pc->next=pb;
+    free(Lb);
+    return Lc;
+}
+int ListLength(LinkList L){
+    if(L->next==NULL)
+	return 0;
+    int length=0;
+    while(L->next!=NULL){
+	L=L->next;
+	length++;	
+    }
+    return length;
+}
 int main(){
-    LinkList L;
+    LinkList L,L1,L2;
     Create_tail_List(L);
-    InsertList(L,1);
-    InsertList(L,2);
+    Create_tail_List(L1);
+    cout<<ListLength(L1)<<endl;
+    ListDeleteSame(L);
     PrintList(L);
     int num;
     cout<<"请输入元素序号"<<endl;
