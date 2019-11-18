@@ -1,10 +1,10 @@
 # MSSQL charindex 
 ## syntax
-
-> ![NOTE]
+> [!NOTE]
 > CHARINDEX ( expressionToFind , expressionToSearch [, startlocation] )    
  CHARINDEX cannot be used with image, ntext, or text data types.    
  The starting position returned is 1-based, not 0-based.    
+ 
 ## example
 > [!NOTE]
 > declare @string varchar(10);  
